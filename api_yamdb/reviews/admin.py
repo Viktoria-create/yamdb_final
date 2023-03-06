@@ -1,12 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
-
 from django.db import models
 from reviews.models import (Category, Comment, Genre, Review, Title,
-                            User, GenreTitle)
-
-# from .models import Category, Comment, Genre, Review, Title
-
+                            GenreTitle, User)
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from import_export.fields import Field
