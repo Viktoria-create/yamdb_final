@@ -9,6 +9,7 @@ services:
 
   web:
     build:
+      image: viktoriakosh/yamdb:latest
       context: ../
       dockerfile: api_yamdb/Dockerfile
 
