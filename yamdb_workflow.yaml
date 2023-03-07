@@ -49,7 +49,7 @@ jobs:
     needs: build_and_push_to_dockerhub
     steps:
     - name: Execute remote ssh commands to deploy
-      uses: appleboy/ssh-action@master
+      uses: actions/ssh-action@master  # appleboy
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
