@@ -52,13 +52,12 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.USER }} # USERNAME
+        username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker-compose pull viktoriakosh/api_yamdb
           sudo docker-compose stop
-          sudo docker-compose rm -f web
+          sudo docker-compose rm web
           touch .env
           echo DB_ENGINE=${{ secrets.DB_ENGINE }} > .env
           echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -66,10 +65,11 @@ jobs:
           echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+          echo DJANGO_ALLOWED_HOSTS=${{secrets.DJANGO_ALLOWED_HOSTS }} >> .env
           echo HOST=${{ secrets.HOST }} >> .env
           echo SECRET_KEY="${{ secrets.SECRET_KEY }}" >> .env
-          echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
-          sudo docker-compose up -d
+          sudo docker-compose up -d --build
+          sudo docker exec web-1 python manage.py collectststic --noinput
   send_message:
     name: Send message
     runs-on: ubuntu-latest

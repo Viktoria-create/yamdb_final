@@ -58,15 +58,18 @@ jobs:
         script: |
           sudo docker-compose stop
           sudo docker-compose rm web
+          touch .env
           echo DB_ENGINE=${{ secrets.DB_ENGINE }} > .env
           echo DB_NAME=${{ secrets.DB_NAME }} >> .env
           echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
           echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+          echo DJANGO_ALLOWED_HOSTS=${{secrets.DJANGO_ALLOWED_HOSTS }} >> .env
           echo HOST=${{ secrets.HOST }} >> .env
           echo SECRET_KEY="${{ secrets.SECRET_KEY }}" >> .env
-          sudo docker-compose up -d
+          sudo docker-compose up -d --build
+          sudo docker exec web-1 python manage.py collectststic --noinput
   send_message:
     name: Send message
     runs-on: ubuntu-latest
