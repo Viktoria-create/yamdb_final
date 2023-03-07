@@ -42,7 +42,6 @@ jobs:
         context: "{{defaultContext}}:api_yamdb"
         push: true
         tags: viktoriakosh/api_yamdb:latest
-        file: api_yamdb/Dockerfile
 
   deploy:
     name: Deploy on Yandex.Cloud
