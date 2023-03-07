@@ -66,7 +66,6 @@ jobs:
           echo DB_HOST=${{ secrets.DB_HOST }} >> .env
           echo DB_PORT=${{ secrets.DB_PORT }} >> .env
           echo DJANGO_ALLOWED_HOSTS=${{secrets.DJANGO_ALLOWED_HOSTS }} >> .env
-          echo HOST=${{ secrets.HOST }} >> .env
           echo SECRET_KEY="${{ secrets.SECRET_KEY }}" >> .env
           sudo docker-compose up -d --build
           sudo docker exec web-1 python manage.py collectststic --noinput
