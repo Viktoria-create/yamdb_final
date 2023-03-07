@@ -69,7 +69,6 @@ jobs:
           echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
           echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
           sudo docker-compose up -d
-          sudo docker exec web-1 python.py collectstatic --noinput
   send_message:
     name: Send message
     runs-on: ubuntu-latest
