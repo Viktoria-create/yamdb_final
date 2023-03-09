@@ -57,9 +57,6 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-        debug:
-          description: enable debug mode
-          default: false
         script: |
           sudo docker compose pull viktoriakosh/yamdb:latest
           sudo docker compose stop
@@ -75,6 +72,9 @@ jobs:
           echo SECRET_KEY="${{ secrets.SECRET_KEY }}" >> .env
           echo HOST=${{ secrets.HOST }} >> .env
           sudo docker compose up -d --build
+        debug:
+          description: 'enable debug mode'
+          default: false
 
   send_message:
     name: Send message
