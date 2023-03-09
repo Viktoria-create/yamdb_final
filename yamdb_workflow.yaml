@@ -58,7 +58,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         debug:
-          description: 'enable debug mode'
+          description: enable debug mode
           default: false
         script: |
           sudo docker compose pull viktoriakosh/yamdb:latest
