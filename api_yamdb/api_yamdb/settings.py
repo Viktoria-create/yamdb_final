@@ -73,7 +73,7 @@ SQLITE = {
     }
 }
 
-POSTGRES = {
+DATABASES = {
     'default': {
         'ENGINE': os.environ.get(
             'POSTGRES_ENGINE',
