@@ -8,19 +8,16 @@ services:
       - ./.env
 
   web:
-    build:
-      image: viktoriakosh/yamdb:latest
-      context: ../
-      dockerfile: api_yamdb/Dockerfile
-
+    image: viktoriakosh/yamdb_final:latest
     restart: always
     volumes:
-      - static_value:/app/api_yamdb/static/
-      - media_value:/app/api_yamdb/media/
+      - static_value:/app/static/
+      - media_value:/app/media/
     ports:
      - "8000:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     env_file:
       - ./.env
 
