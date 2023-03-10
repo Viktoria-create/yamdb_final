@@ -34,5 +34,6 @@ services:
       - web
 
 volumes:
+  postgresql_volume:
   static_value:
   media_value:
