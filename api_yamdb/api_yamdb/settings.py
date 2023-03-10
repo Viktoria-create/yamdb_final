@@ -64,6 +64,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
+# Database
+
+SQLITE = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'TIME_ZONE': 'UTC',
+    }
+}
 
 DATABASES = {
     'default': {
