@@ -6,6 +6,10 @@ services:
       - postgresql_volume:/var/lib/postgresql/data/
     env_file:
       - ./.env
+    environment: # add line.
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
 
   web:
     image: viktoriakosh/yamdb_final:latest
