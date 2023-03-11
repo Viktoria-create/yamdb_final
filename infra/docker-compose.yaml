@@ -14,7 +14,7 @@ services:
       - static_value:/app/api_yamdb/static/
       - media_value:/app/api_yamdb/media/
     ports:
-     - "5432:5432"
+     - "8000:8000"
     depends_on:
       - db
       #  condition: service_healthy
