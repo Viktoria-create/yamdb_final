@@ -5,9 +5,8 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('api.urls')),
-    path('admin/', include('myapp.urls')),
     path(
-        'redoc/',
+        'redoc',
         TemplateView.as_view(template_name='redoc.html'),
         name='redoc'
     ),
