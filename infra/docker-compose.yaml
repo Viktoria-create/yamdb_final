@@ -15,8 +15,8 @@ services:
     volumes:
     #  - static_value:/app/api_yamdb/static/
     #  - media_value:/app/api_yamdb/media/
-      - static_value:/app/static/:rw
-      - media_value:/app/media/:rw
+      - static_value:/app/static/
+      - media_value:/app/media/
     ports:
      - "8000:8000"
     depends_on:
