@@ -4,6 +4,8 @@ services:
     image: postgres:13.0-alpine
     volumes:
       - postgresql_volume:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
     env_file:
       - ./.env
 
@@ -11,8 +13,10 @@ services:
     image: viktoriakosh/yamdb_final:latest
     restart: always
     volumes:
-      - static_value:/app/api_yamdb/static/
-      - media_value:/app/api_yamdb/media/
+    #  - static_value:/app/api_yamdb/static/
+    #  - media_value:/app/api_yamdb/media/
+      - static_value:/app/static/:rw
+      - media_value:/app/media/:rw
     ports:
      - "8000:8000"
     depends_on:
