@@ -25,9 +25,9 @@
 Создано на фрэймворке Django. Работает в отдельном контейнере на WSGI сервере 
 [Gunicorn](https://gunicorn.org/)
 
-Более детальную информацию по функционалу приложения можно посмотреть [здесь](https://github.com/evgeny81d/api_yamdb#readme)
+Более детальную информацию по функционалу приложения можно посмотреть [здесь](https://github.com/Viktoria-create/api_yamdb#readme)
 
-Образ для развертывания docker контейнера с приложением хранится на [dockerhub](https://hub.docker.com/repository/docker/evgeny81d/api_yamdb).
+Образ для развертывания docker контейнера с приложением хранится на [dockerhub](https://hub.docker.com/repository/docker/viktoriakosh/api_yamdb).
 
 **База данных**
 
