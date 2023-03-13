@@ -1,19 +1,22 @@
 import os
+import secrets
+import string
 from datetime import timedelta
 
 from dotenv import load_dotenv
 
 load_dotenv()
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
+if not SECRET_KEY:
+    SECRET_KEY = ''.join(secrets.choice(string.ascii_letters) for _ in range(50))
 
 DEBUG = int(os.environ.get('DEBUG', default=0))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", default='localhost').split(" ")
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default='localhost').split(" ")
 
 
 INSTALLED_APPS = [
@@ -63,7 +66,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
-
 
 DATABASES = {
     'default': {

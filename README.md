@@ -58,4 +58,4 @@ CI/CD состоит из четырех этапов и автоматичес�
 `infra/nginx/default.conf`, который необходимо разместить в `/home/<username>/nginx/default.conf`
 
 ## Поверка проекта 
- [WEB Django REST framework](http://51.250.98.165/admin)
+ [WEB Django REST framework](http://158.160.5.86/api/v1/)
