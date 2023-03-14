@@ -16,7 +16,8 @@ if not SECRET_KEY:
 
 DEBUG = int(os.environ.get('DEBUG', default=0))
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default='localhost').split(" ")
+# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default='localhost').split(" ")
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default='158.160.5.86 localhost').split(" ")
 
 
 INSTALLED_APPS = [
