@@ -1,5 +1,5 @@
 # CI/CD для многоконтейнерного веб-приложения
-![workflow status](https://github.com/Viktoria-create/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+![статус работы](https://github.com/Viktoria-create/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?event=push)
 
 Цель проекта - практическое применение сервиса GitHub Actions для автоматизации 
 процессов тестирования и развертывания многоконтейнерного веб-приложения на сервере.
