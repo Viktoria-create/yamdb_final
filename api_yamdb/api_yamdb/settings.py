@@ -14,8 +14,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 if not SECRET_KEY:
     SECRET_KEY = ''.join(secrets.choice(string.ascii_letters) for _ in range(50))
 
-DEBUG = True
-# int(os.environ.get('DEBUG', default=0))
+DEBUG = int(os.environ.get('DEBUG', default=0))
 
 # ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default='localhost').split(" ")
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default='158.160.1.217 localhost').split(" ")
